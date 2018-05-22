@@ -47,7 +47,7 @@ if __name__ == '__main__':
 		incoming_tax = Cal_incoming_tax(salary,fee)
 		tax = Cal_tax(incoming_tax)
 		salary_after_tax = Cal_salary_after_tax(salary,fee,tax)	
-		print(IDs[num], end=':'
+		print(IDs[num], end=':')
 		print(salary_after_tax)
 		num += 1
 
