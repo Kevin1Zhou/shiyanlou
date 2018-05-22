@@ -23,7 +23,7 @@ def Cal_tax(*information):
 		tax = format(incoming_tax*0.45-13505, ".2f")
 	return tax
 
-
+undone
 
 		
 	 
