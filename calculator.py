@@ -6,8 +6,8 @@ Salarys = []
 for arg in sys.argv[1:]:
 	a = arg.split(':')
 	try:
-		IDs.append(int(a.[0]))
-		Salarys.append(int(a.[1]))
+		IDs.append(int(a[0]))
+		Salarys.append(int(a[1]))
 	except:
 		print("Parameter Error")
 
