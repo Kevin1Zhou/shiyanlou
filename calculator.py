@@ -1,10 +1,23 @@
 #!/usr/bin/env python3
 import sys
-start_point = 3500
-fee = salary*0.165
-incoming_tax = salary - fee - start_point
 
-def Cal_tax(*information):
+IDs = []
+Salarys = []
+for arg in sys.argv[1:]:
+	a = arg.split(':')
+	try:
+		IDs.append(int(a.[0]))
+		Salarys.append(int(a.[1]))
+	except:
+		print("Parameter Error")
+
+def Cal_fee(salary):  #计算五险一金费用
+	fee = salary * 0.165
+	return fee
+def Cal_incoming_tax(salary,fee,start_point=3500): #计算应纳税所得额
+	incoming_tax = salary - fee - start_point
+	return incoming_tax
+def Cal_tax(incoming_tax): #计算应纳税额
 	tax = 0
 	global incoming_tax
 	if incoming_tax <= 1500:
@@ -22,8 +35,23 @@ def Cal_tax(*information):
 	else:
 		tax = format(incoming_tax*0.45-13505, ".2f")
 	return tax
+	
+def Cal_salary_after_tax(salary,fee,tax):	#计算税后工资
+	salary_after_tax = salary - fee - tax
+	return salary_after_tax
 
-undone
+if __name__ == '__main__':
+	for salary in Salarys:
+		num = 0
+		fee = Cal_fee(salary)
+		incoming_tax = Cal_incoming_tax(salary,fee)
+		tax = Cal_tax(incoming_tax)
+		salary_after_tax = Cal_salary_after_tax(salary,fee,tax)	
+		print(IDs[num], end=':'
+		print(salary_after_tax)
+		num += 1
+
+
 
 		
 	 
