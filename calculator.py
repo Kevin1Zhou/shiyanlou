@@ -18,8 +18,9 @@ def Cal_incoming_tax(salary,fee,start_point=3500): #计算应纳税所得额
 	incoming_tax = salary - fee - start_point
 	return incoming_tax
 def Cal_tax(incoming_tax): #计算应纳税额
-	tax = 0	
-	if incoming_tax <= 1500:
+	if incoming_tax < 0:
+		tax = 0
+	elif incoming_tax <= 1500:
 		tax = incoming_tax*0.03-0
 	elif incoming_tax > 1500 and incoming_tax <=4500:
 		tax = incoming_tax*0.1-105
