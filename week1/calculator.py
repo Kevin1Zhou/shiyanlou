@@ -3,7 +3,7 @@ import sys
 
 IDs = []
 Salarys = []
-for arg in sys.argv[1:]:
+for arg in sys.argv[1:]:  #遍历获取的命令行参数
 	a = arg.split(':')
 	try:
 		IDs.append(int(a[0]))
