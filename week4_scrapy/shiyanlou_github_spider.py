@@ -2,7 +2,7 @@
 
 import scrapy
 
-Class ShiyanlouGithubSpider(scrapy.Spider):
+class ShiyanlouGithubSpider(scrapy.Spider):
 	name = 'shiyanlou-github'
 	
 	@property
@@ -16,4 +16,4 @@ Class ShiyanlouGithubSpider(scrapy.Spider):
 				'name': base.xpath('.//a[@itemprop="name codeRepository"]/text()').re('\n\s*(.*)'),
 				'update_time': base.xpath('.//relative-time/@datetime').extract()
 				}
-	
+#scrapy runspider shiyanlou_github_spider.py -o shiyanlou-github.json 运行脚本的命令
